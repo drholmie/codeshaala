@@ -5,4 +5,4 @@ Aditya Girisha,
 Abhimanyu Roy,
 Animesh ND. 
 
-This is the javascript content as well as teh quizes used in our website. Do note the content is limited due to time constraint.
+This branch contains the javascript content as well as the quizes used in our website. Do note the content is limited due to time constraint.

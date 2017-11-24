@@ -7,6 +7,9 @@ Animesh ND.
 
 The branches contain the following information
 drholmie-patch-1 contains information on php and css files used
+
 drholmie-html-quiz+content contains information on the html parts of our website
+
 drholmie-css-quiz+content contains information on the css parts of our website
+
 drholmie-js-quiz+content contains information on the js parts of our website

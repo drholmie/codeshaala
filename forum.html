@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CodeShaala</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="sty.css">
+
+<link rel="stylesheet" href="style.css">
+
+
+
+    </head>
+    <style>
+.mark1{ background-color:ghostwhite; border-left:solid 5px;border-left-color:green;  padding:20px; margin:20px; padding-bottom:0px;}
+.mark2{ background-color:ghostwhite; border-left:solid 5px;border-left-color:green;  padding:20px; margin:20px; margin-bottom: 0px; padding-bottom: 0px;}
+
+</style>
+
+
+
+	<body>
+	<header role="banner" id="fh5co-header">
+			<div class="container">
+				<!-- <div class="row"> -->
+				<nav class="navbar navbar-default">
+		        <div class="navbar-header">
+		        	<!-- Mobile Toggle Menu Button -->
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+		         <a class="navbar-brand" href="index.html">CodeShaala</a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav navbar-right">
+		            <li ><a href="homein.php" data-nav-section="home"><span>Home</span></a></li>
+		            <li ><a href="catalog.html"><span>Course Catalog</span></a></li>
+		            <li class="active" ><a href="forum.html"><span>Forum</span></a></li>
+		            <li ><a href="profile.html"><span>Profile</span></a></li>
+		            <li ><a href="homeout.php"><span>logout</span></a></li>
+		            <li ><a href="#" data-nav-section="contact"><span>Contact</span></a></li>
+		          </ul>
+		        </div>
+			    </nav>
+			  <!-- </div> -->
+		  </div>
+	</header>
+<br><br><br><br><br>
+
+
+  <!--for demo wrap-->
+  <h1 style="font-size: 60px;">Forum</h1>
+        <center><h2 style="font-size: 25px;color:whitesmoke">Questions? fire away.</h2></center><br>
+   <center style="margin-left:200px;">
+  <div class="row row-bottom-padded-md" align="center" style="position: relative; left: 250px">
+				<div class="col-md-6 to-animate">
+					<div class="form-group ">
+						<label for="email" class="sr-only">Email</label>
+                        <textarea rows="5" cols="50"  class="form-control" placeholder="Enter Your Query" id="ta"></textarea>
+					</div>
+
+					<div class="form-group " >
+						<input class="btn btn-primary btn-lg" value="Submit" type="submit" onclick="new_status()">
+					</div>
+                    <br>
+					</div>
+				</div>
+
+   </center>
+
+
+    <script>
+var countcmnt=8;
+var countdiv=5;
+
+function new_status(){
+
+	var br=document.createElement("br");
+	var stat=document.getElementById("ta").value;
+	var division=document.createElement("div");
+	division.setAttribute("id","countdiv"+countdiv);
+	division.setAttribute("class","mark1");
+	var post=document.createElement("input");
+	post.setAttribute("id","post"+countdiv);
+	post.setAttribute("type","text");
+	post.setAttribute("value",stat);
+    post.setAttribute("style","width:800px;");
+    post.setAttribute("readonly","readonly");
+
+
+	var no_of_likes=document.createElement("label");
+	no_of_likes.setAttribute("id","no_of_likes"+countdiv);
+	no_of_likes.textContent="0 likes  ";
+
+	var like=document.createElement("input");
+	like.setAttribute("type","button");
+	like.setAttribute("value","Like");
+	like.setAttribute("id","like"+countdiv);
+
+    like.setAttribute("class","btn btn-primary btn-lg");
+	like.setAttribute("onclick","LIKE(this.id)");
+
+	var comment=document.createElement("input");
+	comment.setAttribute("type","button");
+	comment.setAttribute("value","Comment");
+	comment.setAttribute("id","comment"+countdiv);
+    comment.setAttribute("class","btn btn-primary btn-lg");
+	comment.setAttribute("onclick","COMMENT(this.id)");
+
+
+
+
+
+	division.appendChild(post);
+	division.appendChild(br);
+	division.appendChild(no_of_likes);
+	division.appendChild(like);
+	division.appendChild(comment);
+	document.body.append(division);
+	countdiv+=1;
+
+}
+
+
+
+
+function LIKE(id)
+{
+	var button = document.getElementById(id);
+	var post = button.parentNode;
+	var label = post.children[2];
+	label.textContent= (parseInt(label.textContent) + 1)+" Likes  ";
+}
+
+
+function COMMENT(id)
+{
+	var cmt=prompt("Type Your Comment");
+
+	var division2= document.createElement("div");
+	division2.setAttribute("id","countcmnt"+countcmnt);
+    division2.setAttribute("class","mark2");
+
+
+	var cmnt=document.createElement("input");
+	cmnt.setAttribute("id","cmnt"+countcmnt);
+	cmnt.setAttribute("type","text");
+	cmnt.setAttribute("value",cmt);
+    cmnt.setAttribute("style","width:800px;");
+    cmnt.setAttribute("readonly","readonly");
+
+
+	var no_of_likes=document.createElement("label");
+	no_of_likes.setAttribute("id","no_of_likes"+countdiv);
+
+	no_of_likes.textContent="0 likes  ";
+
+	var like=document.createElement("input");
+	like.setAttribute("type","button");
+	like.setAttribute("value","Like");
+	like.setAttribute("id","clike"+countcmnt);
+    like.setAttribute("class","btn btn-primary btn-lg");
+	like.setAttribute("onclick","LIKE(this.id)");
+
+
+	var button = document.getElementById(id);
+	var post = button.parentNode;
+
+
+
+	division2.appendChild(cmnt);
+
+
+
+   var br=document.createElement("br");
+	var br1=document.createElement("br");
+	var rep = document.createElement("input");
+    rep.setAttribute("type","button");
+	rep.setAttribute("id","repc"+countcmnt);
+	rep.setAttribute("onclick","COMMENT(this.id)");
+    rep.setAttribute("class","btn btn-primary btn-lg");
+	rep.setAttribute("value","reply");
+
+	countcmnt++;
+    division2.appendChild(br);
+    division2.appendChild(no_of_likes);
+	division2.appendChild(like);
+    division2.appendChild(rep);
+    division2.appendChild(br1);
+	post.appendChild(division2);
+}
+
+
+
+</script>
+
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Counter -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="js/google_map.js"></script>
+
+	<!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
+	<script src="js/jquery.style.switcher.js"></script>
+	<script>
+		$(function(){
+			$('#colour-variations ul').styleSwitcher({
+				defaultThemeId: 'theme-switch',
+				hasPreview: false,
+				cookie: {
+		          	expires: 30,
+		          	isManagingLoad: true
+		      	}
+			});
+			$('.option-toggle').click(function() {
+				$('#colour-variations').toggleClass('sleep');
+			});
+		});
+	</script>
+	<!-- End demo purposes only -->
+
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+<div id="countdiv3" class="mark1"><input id="post3" type="text" value="hey, can anyone tell me the attribute to make text boxes   uneditable?" style="width:800px;" readonly="readonly"><br><label id="no_of_likes3">2 Likes  </label><input type="button" value="Like" id="like3" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" value="Comment" id="comment3" class="btn btn-primary btn-lg" onclick="COMMENT(this.id)"><div id="countcmnt1" class="mark2"><input id="cmnt1" type="text" value="<input  readonly=&quot;readonly&quot;>" style="width:800px;" readonly="readonly"><br><label id="no_of_likes4">4 Likes  </label><input type="button" value="Like" id="clike1" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" id="repc1" onclick="COMMENT(this.id)" class="btn btn-primary btn-lg" value="reply"><br><div id="countcmnt2" class="mark2"><input id="cmnt2" type="text" value="does it work with textareas?" style="width:800px;" readonly="readonly"><br><label id="no_of_likes4">2 Likes  </label><input type="button" value="Like" id="clike2" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" id="repc2" onclick="COMMENT(this.id)" class="btn btn-primary btn-lg" value="reply"><br><div id="countcmnt3" class="mark2"><input id="cmnt3" type="text" value="perhaps." style="width:800px;" readonly="readonly"><br><label id="no_of_likes4">9 Likes  </label><input type="button" value="Like" id="clike3" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" id="repc3" onclick="COMMENT(this.id)" class="btn btn-primary btn-lg" value="reply"><br></div></div></div></div>
+
+
+        <div id="countdiv4" class="mark1"><input id="post4" type="text" value="what are frameworks?" style="width:800px;" readonly="readonly"><br><label id="no_of_likes4">3 Likes  </label><input type="button" value="Like" id="like4" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" value="Comment" id="comment4" class="btn btn-primary btn-lg" onclick="COMMENT(this.id)"><div id="countcmnt4" class="mark2"><input id="cmnt4" type="text" value="pre-written java script functions for special purposes" style="width:800px;" readonly="readonly"><br><label id="no_of_likes5">5 Likes  </label><input type="button" value="Like" id="clike4" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" id="repc4" onclick="COMMENT(this.id)" class="btn btn-primary btn-lg" value="reply"><br><div id="countcmnt5" class="mark2"><input id="cmnt5" type="text" value="Im looking for a framework for game-making, any suggestions?" style="width:800px;" readonly="readonly"><br><label id="no_of_likes5">7 Likes  </label><input type="button" value="Like" id="clike5" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" id="repc5" onclick="COMMENT(this.id)" class="btn btn-primary btn-lg" value="reply"><br><div id="countcmnt6" class="mark2"><input id="cmnt6" type="text" value="pixijs FTW" style="width:800px;" readonly="readonly"><br><label id="no_of_likes5">2 Likes  </label><input type="button" value="Like" id="clike6" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" id="repc6" onclick="COMMENT(this.id)" class="btn btn-primary btn-lg" value="reply"><br><div id="countcmnt7" class="mark2"><input id="cmnt7" type="text" value="Im sure the webtech teacher wont allow it" style="width:700px;" readonly="readonly"><br><label id="no_of_likes5">1 Likes  </label><input type="button" value="Like" id="clike7" class="btn btn-primary btn-lg" onclick="LIKE(this.id)"><input type="button" id="repc7" onclick="COMMENT(this.id)" class="btn btn-primary btn-lg" value="reply"><br></div></div></div></div></div>
+	</body>
+</html>
